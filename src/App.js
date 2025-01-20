@@ -30,7 +30,7 @@ function App() {
       </header>
     
     <Routes>
-      <Route path="/wisdom-peak-analysis" element={<UserList />} />
+      <Route path="/" element={<UserList />} />
       <Route path="/user/:id" element={<UserDetail />} />
     </Routes>
     </div>
