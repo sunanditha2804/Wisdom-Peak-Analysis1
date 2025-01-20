@@ -4,40 +4,39 @@ import { Link } from "react-router-dom";
 import './UserList.css';
 
 function UserList() {
-  // Accessing user data and state management functions from context
+  
   const { users, setUsers, loading, setLoading, error, setError } = useContext(UserContext);
-  const [searchTerm, setSearchTerm] = useState(""); // Search term for filtering users
-  const [sortOrder, setSortOrder] = useState("asc"); // Sorting order: ascending or descending
+  const [searchTerm, setSearchTerm] = useState(""); 
+  const [sortOrder, setSortOrder] = useState("asc"); 
 
-  // Fetching users from API when the component mounts
+
   useEffect(() => {
     const fetchUsers = async () => {
-      setLoading(true); // Set loading state
+      setLoading(true);
       try {
         const response = await fetch("https://jsonplaceholder.typicode.com/users");
         const data = await response.json();
-        setUsers(data); // Store users in context
-        setError(null); // Reset error state
+        setUsers(data); 
+        setError(null); 
       } catch (err) {
-        setError("Failed to fetch users"); // Set error state if fetching fails
+        setError("Failed to fetch users");
       } finally {
-        setLoading(false); // Reset loading state
+        setLoading(false); 
       }
     };
 
     fetchUsers();
-  }, [setUsers, setLoading, setError]); // Dependency array to prevent infinite loop
+  }, [setUsers, setLoading, setError]); 
 
-  // Filter and sort users based on search term and sort order
   const filteredUsers = users
-    .filter((user) => user.name.toLowerCase().includes(searchTerm.toLowerCase())) // Filter users based on name
+    .filter((user) => user.name.toLowerCase().includes(searchTerm.toLowerCase())) 
     .sort((a, b) =>
       sortOrder === "asc"
-        ? a.name.localeCompare(b.name) // Sort ascending
-        : b.name.localeCompare(a.name) // Sort descending
+        ? a.name.localeCompare(b.name) 
+        : b.name.localeCompare(a.name) 
     );
 
-  // Loading or error handling
+  
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
@@ -45,18 +44,14 @@ function UserList() {
     <div className="user-list-container">
       <header className="header">
         <h1>User Directory</h1>
-
-        {/* Search input */}
         <div className="search-bar">
           <input
             type="text"
             placeholder="Search by name"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)} // Update searchTerm state on input change
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-
-        {/* Sort button */}
         <button
           onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
           className="sort-button"
