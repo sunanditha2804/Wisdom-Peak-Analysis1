@@ -1,0 +1,136 @@
+/* Default styling for the app */
+.app {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light theme */
+.app.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark theme */
+.app.dark {
+  background-color: #121212;
+  color: #ffffff;
+  .switch-button{
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  /* General page styling */
+.user-list-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color:rgb(255, 255, 255);
+  color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #000000;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* User card styles */
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.user-card {
+  padding: 15px;
+  background-color: #000000;
+}
+ 
+.sort-button{
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 10px;
+  border-width: 1px;
+  font-family: serif;
+  font-size: 18px;
+}
+
+.user-name{
+color:#ffffff;
+text-decoration: None;
+}
+
+.user-email{
+color:#ffffff;
+text-decoration: None;
+}
+
+.user-city{
+color:#ffffff;
+text-decoration: None;
+}
+
+.back-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #000000;
+  color:#ffffff;
+  border-width:1px;
+  border-style: solid;
+}
+
+}
+
+/* Add body styles */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.switch-button{
+  border-radius: 20px;
+  background-color: #000000;
+  color: #ffffff;
+}

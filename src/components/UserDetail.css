@@ -1,0 +1,91 @@
+/* General layout for the user details page */
+.user-detail-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #000000;
+    color: var(--text-color, #333333);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-width:1px;
+    border-style: solid;
+    border-color:#000000;
+    text-content:center;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary-color, #ffffff);
+  }
+  
+  /* Back button style */
+  .back-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #ffffff;
+    color:#000000;
+    border-width:1px;
+    border-style: solid;
+  }
+  
+  /* User info details */
+  .user-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .user-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .user-info p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .user-info .label {
+    font-weight: bold;
+    color: var(--secondary-color, #555555);
+  }
+  
+  .user-info .value {
+    color: var(--primary-color, #007bff);
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .user-info {
+      grid-template-columns: 1fr;
+    }
+  
+    .user-info h2 {
+      font-size: 22px;
+    }
+  
+    .user-info p {
+      font-size: 14px;
+    }
+  }
+  
